@@ -1,11 +1,11 @@
 {
   "name": "electron-auto-update-example",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "",
   "main": "main.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/stoianmihail/HyperCut.git"
+    "url": "https://github.com/stoianmihail/HyperCut-release.git"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
