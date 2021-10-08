@@ -15,9 +15,7 @@ function createWindow () {
   mainWindow.on('closed', function () {
     mainWindow = null;
   });
-  mainWindow.once('ready-to-show', () => {
-    autoUpdater.checkForUpdatesAndNotify();
-  });
+  autoUpdater.checkForUpdatesAndNotify();
 }
 
 app.on('ready', () => {
@@ -37,17 +35,21 @@ app.on('activate', function () {
 });
 
 ipcMain.on('app_version', (event) => {
+  console.log('app_version');
   event.sender.send('app_version', { version: app.getVersion() });
 });
 
 autoUpdater.on('update-available', () => {
+  console.log('update-available');
   mainWindow.webContents.send('update_available');
 });
 
 autoUpdater.on('update-downloaded', () => {
+  console.log('update-downloaded');
   mainWindow.webContents.send('update_downloaded');
 });
 
 ipcMain.on('restart_app', () => {
+  console.log('restart_app');
   autoUpdater.quitAndInstall();
 });
